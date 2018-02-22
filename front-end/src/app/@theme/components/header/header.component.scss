@@ -12,6 +12,7 @@
     width: 100%;
     order: 0;
     flex-direction: row;
+    cursor: pointer;
   }
   .right {
     order: 1;
@@ -21,6 +22,11 @@
   .logo-containter {
     display: flex;
     align-items: center;
+  }
+
+  .logoimage {
+    height: 150px;
+    width: 150px;
   }
 
   .control-item {
