@@ -7,7 +7,7 @@ module.exports.getMember = function(req, res, next) {
   if (!Validations.isObjectId(req.params.memberId)) {
     return res.status(422).json({
       err: null,
-      msg: 'productId parameter must be a valid ObjectId.',
+      msg: 'memberId parameter must be a valid ObjectId.',
       data: null
     });
   }
