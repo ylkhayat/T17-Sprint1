@@ -11,6 +11,11 @@ var memberSchema = mongoose.Schema({
 	required: true,
 
 },
+  about:{
+  type: String,
+  required: true,
+  trim: true,
+},
 	  createdAt: {
     type: Date,
     default: Date.now

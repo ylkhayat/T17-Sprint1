@@ -7,7 +7,7 @@ module.exports.getMember = function(req, res, next) {
   if (!Validations.isObjectId(req.params.memberId)) {
     return res.status(422).json({
       err: null,
-      msg: 'productId parameter must be a valid ObjectId.',
+      msg: 'memberId parameter must be a valid ObjectId.',
       data: null
     });
   }
@@ -29,7 +29,7 @@ module.exports.getMember = function(req, res, next) {
 };
 
 module.exports.getMembers = function(req, res, next) {
-  Product.find({}).exec(function(err, members) {
+  Member.find({}).exec(function(err, members) {
     if (err) {
       return next(err);
     }
@@ -50,7 +50,7 @@ module.exports.createMember = function(req, res, next) {
   if (!valid) {
     return res.status(422).json({
       err: null,
-      msg: 'name(String) and price(Number) are required fields.',
+      msg: 'name(String) , imgURL(String) and about(String) are required fields.',
       data: null
     });
   }
@@ -58,7 +58,7 @@ module.exports.createMember = function(req, res, next) {
   delete req.body.createdAt;
   delete req.body.updatedAt;
 
-  Product.create(req.body, function(err, member) {
+  Member.create(req.body, function(err, member) {
     if (err) {
       return next(err);
     }
@@ -84,7 +84,7 @@ module.exports.updateMember = function(req, res, next) {
   if (!valid) {
     return res.status(422).json({
       err: null,
-      msg: 'name(String) and price(Number) are required fields.',
+      msg: 'name(String) , imgURL(String) and about(String) are required fields.',
       data: null
     });
   }
@@ -105,7 +105,7 @@ module.exports.updateMember = function(req, res, next) {
     if (!updatedMember) {
       return res
         .status(404)
-        .json({ err: null, msg: 'Product not found.', data: null });
+        .json({ err: null, msg: 'Member not found.', data: null });
     }
     res.status(200).json({
       err: null,
