@@ -1,4 +1,6 @@
-# T17  Sprint 1
+
+# Haga Laziza - Express Fast Food Delivery
+## T17  Sprint 1
 
 ## About:
 ### This repository contains two folders for front-end and back-end development of a mini-ebay like project.
@@ -15,3 +17,4 @@
 #### b. ng serve
 
 ## Authors:
+Youssef Tarek - 37-3865
