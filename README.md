@@ -6,18 +6,15 @@
 
 
 ## **Getting Started:**
-### 1. Clone Repository
-
-
-### 2. In Backend folder:
-*a. npm install*
-*b. npm start*
-
-### 3. In Frontend folder:
-*a. npm install*
-*b. npm start or ng serve (according to your config)*
+1. Clone Repository
+2. In Backend folder:
+ * npm install
+ * npm start
+3. In Frontend folder:
+ * npm install
+ * npm start or ng serve (according to your config)
 
 ## Authors:
-**Youssef Tarek - 37-3865**
-
-**Perihan Mohamed-  37-4034**
+* Youssef Tarek - 37-3865
+* Perihan Mohamed - 37-4034
+* Abdelrahman Rami - 37-1032
