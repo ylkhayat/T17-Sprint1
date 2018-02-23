@@ -29,7 +29,7 @@ module.exports.getMember = function(req, res, next) {
 };
 
 module.exports.getMembers = function(req, res, next) {
-  Product.find({}).exec(function(err, members) {
+  Member.find({}).exec(function(err, members) {
     if (err) {
       return next(err);
     }
@@ -50,7 +50,7 @@ module.exports.createMember = function(req, res, next) {
   if (!valid) {
     return res.status(422).json({
       err: null,
-      msg: 'name(String) and price(Number) are required fields.',
+      msg: 'name(String) , imgURL(String) and about(String) are required fields.',
       data: null
     });
   }
