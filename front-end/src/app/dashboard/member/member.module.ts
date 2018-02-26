@@ -8,6 +8,7 @@ import { MemberComponent } from './member.component';
 @NgModule({
   imports: [ThemeModule, MemberRoutingModule],
   declarations: [MemberComponent],
-  providers: []
+  providers: [],
+  templateURL: './member.component.html'
 })
 export class MemberModule {}
