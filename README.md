@@ -31,6 +31,6 @@
 * Hadeer Mohamed 37-5898
 * Merna Adel 37-4320
 * Nadine Tarek 37-1156
-* Nadine Tarek 37-1156
 * Mai Samir Ibrahim 37-3932
 * Ali Ahmed Mohamed 37-6941
+* SeifEl-Din Ahmed - 37-5628
