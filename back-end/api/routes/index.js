@@ -1,6 +1,7 @@
 var express = require('express'),
   router = express.Router(),
   productCtrl = require('../controllers/ProductController');
+	memberCtrl = require('../controllers/MemberController');
 
 //-------------------------------Product Routes-----------------------------------
 router.get('/product/getProducts', productCtrl.getProducts);
@@ -12,5 +13,11 @@ router.get(
 router.post('/product/createProduct', productCtrl.createProduct);
 router.patch('/product/updateProduct/:productId', productCtrl.updateProduct);
 router.delete('/product/deleteProduct/:productId', productCtrl.deleteProduct);
+
+//-------------------------------Member Routes-----------------------------------
+router.get('/member/getMembers', memberCtrl.getMembers);
+router.post('/member/createMember', memberCtrl.createMember);
+router.patch('/member/updateMember/:memberId', memberCtrl.updateMember);
+router.delete('/member/deleteMember/:memberId', memberCtrl.deleteMember);
 
 module.exports = router;
