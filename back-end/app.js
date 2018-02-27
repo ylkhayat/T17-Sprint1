@@ -1,5 +1,7 @@
+
 require('./api/config/DBConnection');
 var express = require('express'),
+router = express.Router(),
   logger = require('morgan'),
   cors = require('cors'),
   helmet = require('helmet'),
@@ -8,6 +10,8 @@ var express = require('express'),
   routes = require('./api/routes'),
   config = require('./api/config/Config'),
   app = express();
+  const authentication = require('../back-end/api/controllers/authentication')(router);
+  
 
 app.set('secret', config.SECRET);
 
@@ -19,6 +23,14 @@ app.use(
     methods: ['GET', 'POST', 'PATCH', 'DELETE']
   })
 );
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+ 
+// parse application/json
+app.use(bodyParser.json());
+
+
 app.use(helmet());
 app.use(compression());
 app.use(bodyParser.json());
@@ -39,14 +51,17 @@ app.use(function(err, req, res, next) {
     data: null
   });
 });
-
+app.use('/authentication' , authentication);
+console.log('test');
 // 404 error handler
 app.use(function(req, res) {
   res.status(404).json({
     err: null,
     msg: '404 Not Found',
     data: null
+    
   });
-});
+}); 
 
 module.exports = app;
+
