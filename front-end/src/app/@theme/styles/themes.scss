@@ -3,6 +3,7 @@
 // @nebular out of the box themes
 @import '~@nebular/theme/styles/themes';
 
+@import '~@nebular/auth/styles/all';
 // which themes you what to enable (empty to enable all)
 $nb-enabled-themes: (
   default,
