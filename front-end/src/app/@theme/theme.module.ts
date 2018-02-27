@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { NbEmailPassAuthProvider, NbAuthModule } from '@nebular/auth';
+
 
 import {
   NbActionsModule,
@@ -72,7 +74,103 @@ const NB_THEME_PROVIDERS = [
 ];
 
 @NgModule({
-  imports: [...BASE_MODULES, ...NB_MODULES],
+  imports: [...BASE_MODULES, ...NB_MODULES,NbAuthModule.forRoot({
+    providers: {
+      email: {
+        service: NbEmailPassAuthProvider,
+        config: {
+          baseEndpoint: '',
+          login: {
+            alwaysFail: false,
+            rememberMe: true,
+            endpoint: '/api/auth/login',
+            method: 'post',
+            redirect: {
+              success: '/',
+              failure: null,
+            },
+            defaultErrors: ['Login/Email combination is not correct, please try again.'],
+            defaultMessages: ['You have been successfully logged in.'],
+          },
+          register: {
+            alwaysFail: false,
+            rememberMe: true,
+            endpoint: '/api/auth/register',
+            method: 'post',
+            redirect: {
+              success: '/',
+              failure: null,
+            },
+            defaultErrors: ['Something went wrong, please try again.'],
+            defaultMessages: ['You have been successfully registered.'],
+          },
+          logout: {
+            alwaysFail: false,
+            endpoint: '/api/auth/logout',
+            method: 'delete',
+            redirect: {
+              success: '/',
+              failure: null,
+            },
+            defaultErrors: ['Something went wrong, please try again.'],
+            defaultMessages: ['You have been successfully logged out.'],
+          },
+          requestPass: {
+            endpoint: '/api/auth/request-pass',
+            method: 'post',
+            redirect: {
+              success: '/',
+              failure: null,
+            },
+            defaultErrors: ['Something went wrong, please try again.'],
+            defaultMessages: ['Reset password instructions have been sent to your email.'],
+          },
+          resetPass: {
+            endpoint: '/api/auth/reset-pass',
+            method: 'put',
+            redirect: {
+              success: '/',
+              failure: null,
+            },
+            resetPasswordTokenKey: 'reset_password_token',
+            defaultErrors: ['Something went wrong, please try again.'],
+            defaultMessages: ['Your password has been successfully changed.'],
+          },
+          
+         
+        },
+      },
+    },
+    forms: {
+
+      login: {
+        redirectDelay: 0,
+        showMessages: {
+          success: true,
+        },
+      },
+      register: {
+        redirectDelay: 0,
+        showMessages: {
+          success: true,
+        },
+      },
+      requestPassword: {
+        redirectDelay: 0,
+        showMessages: {
+          success: true,
+        },
+      },
+      resetPassword: {
+        redirectDelay: 0,
+        showMessages: {
+          success: true,
+        },
+      },
+      logout: {
+        redirectDelay: 0,
+    },
+  }}), ],
   exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
   declarations: [...COMPONENTS, ...PIPES]
 })

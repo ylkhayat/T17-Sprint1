@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
+import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
 
 @Component({
   selector: 'ngx-header',
@@ -11,15 +12,21 @@ export class HeaderComponent implements OnInit {
   user: any;
   userMenu: any[];
 
+
+
+
+ 
+
+  ngOnInit() {
+    this.userMenu = [{ title: 'Profile' },{ title: 'Settings' },{ title: 'Logout' }];
+  }
+
+
   constructor(
     private sidebarService: NbSidebarService,
     private menuService: NbMenuService
   ) {}
-
-  ngOnInit() {
-    this.userMenu = [{ title: 'Logout' }];
-  }
-
+  
   toggleSidebar(): boolean {
     this.sidebarService.toggle(true, 'menu-sidebar');
     return false;
@@ -27,6 +34,14 @@ export class HeaderComponent implements OnInit {
 
   goToHome() {
     this.menuService.navigateHome();
+  }
+
+  login(){
+    window.location.href="#/auth/login"
+  }
+
+  signup(){
+    window.location.href="#/auth/register"
   }
 
   onMenuClick(event) {
