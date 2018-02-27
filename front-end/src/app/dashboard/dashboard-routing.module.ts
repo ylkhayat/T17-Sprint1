@@ -4,19 +4,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
+
   {
     path: '',
     component: DashboardComponent,
     children: [
       {
-        path: 'items',
-        loadChildren: './items/items.module#ItemsModule'
+          path: '',
+          loadChildren : './about/about.module#AboutModule'
       },
-      {
-        path: '',
-        redirectTo: 'items',
-        pathMatch: 'full'
-      }
+    {
+      path:'items',
+      loadChildren : './items/items.module#ItemsModule'
+    }
+
     ]
   }
 ];

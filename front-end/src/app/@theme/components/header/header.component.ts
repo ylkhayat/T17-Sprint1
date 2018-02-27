@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { regService} from '/Users/ziad/T17-Sprint1/front-end/src/app/services/reg.services' ;
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
+
 import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
+
 
 @Component({
   selector: 'ngx-header',
@@ -16,10 +19,12 @@ export class HeaderComponent implements OnInit {
 
 
 
- 
+
 
   ngOnInit() {
+
     this.userMenu = [{ title: 'Profile' },{ title: 'Settings' },{ title: 'Logout' }];
+
   }
 
 
@@ -28,7 +33,7 @@ export class HeaderComponent implements OnInit {
     private menuService: NbMenuService,
     private regService:regService
   ) {}
-  
+
   toggleSidebar(): boolean {
     this.sidebarService.toggle(true, 'menu-sidebar');
     return false;
