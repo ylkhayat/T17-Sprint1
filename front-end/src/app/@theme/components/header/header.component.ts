@@ -53,9 +53,5 @@ export class HeaderComponent implements OnInit {
     if (event.title === 'Logout') {
       // Think about what to do ;)
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 03c8f86fb39d3e8991cc64dfc2cc933565acd729
   }
 }
