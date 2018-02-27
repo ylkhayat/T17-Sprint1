@@ -42,9 +42,7 @@ const routes: Routes = [
       },
     ],
   },
-  {
-
-    path: 'dashboard',
+  {    path: 'dashboard',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   },{path:'items' ,
 	loadChildren :'./dashboard/items/items.module#ItemsModule'},
