@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard.component';
-import { MemberComponent } from './member/member.component';
+// import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
 
@@ -11,18 +11,15 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
-          path: 'member',
-          component: MemberComponent
+          path: '',
+          loadChildren : './about/about.module#AboutModule'
       },
-{ path:'items'
-loadChildren : './items/items.module#ItemsModule'
-},
+    {
+      path:'items',
+      loadChildren : './items/items.module#ItemsModule'
+    },
 
-      {
-        path: '',
-        redirectTo: 'member',
-        pathMatch: 'full'
-      }
+
     ]
   }
 ];
