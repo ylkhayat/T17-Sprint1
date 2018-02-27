@@ -41,14 +41,6 @@ export class HeaderComponent implements OnInit {
     this.menuService.navigateHome();
   }
 
-<<<<<<< HEAD
-  onMenuItemClick() {
-    this.menuService.onItemClick().subscribe((bag: NbMenuBag) => {
-      if (bag.item.title === 'Logout') {
-        //Think about what to do ;)
-      }
-    });
-=======
   login(){
     window.location.href="#/auth/login"
   }
@@ -61,6 +53,6 @@ export class HeaderComponent implements OnInit {
     if (event.title === 'Logout') {
       // Think about what to do ;)
     }
->>>>>>> 61dd89a62dc9db112c871adc4c1e7b0cf4cd412f
+
   }
 }
