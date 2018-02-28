@@ -41,6 +41,7 @@ const routes: Routes = [
         component: NbResetPasswordComponent,
       },
     ],
+
   },
   {    path: 'dashboard',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
@@ -48,7 +49,7 @@ const routes: Routes = [
   {
     path:'items' ,
 	  loadChildren :'./dashboard/items/items.module#ItemsModule'},
-  
+
   {
     path: '', redirectTo: 'dashboard', pathMatch: 'full'
   },
