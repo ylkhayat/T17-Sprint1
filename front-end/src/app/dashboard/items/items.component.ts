@@ -20,7 +20,6 @@ export class ItemsComponent {
   productName : string = '';
   productPrice : number = 0;
 
-
   constructor(private itemsService:ItemsService){
 
   }
