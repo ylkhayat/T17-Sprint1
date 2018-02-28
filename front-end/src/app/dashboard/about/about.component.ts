@@ -4,7 +4,7 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
     selector: 'app-root',
     template: `
 
-    <p style="color:purple; font-size:100%;" align="center"><i><b>
+    <p style="color:purple; font-size:120%; font-family:" align="center"><b>
     Team T17 Haga Laziza welcomes you to our project. The team consists of  <br/>
     24 students in MET CS major taking Software Engineering course in 6th <br/>
     semester. The course is mainly about self-learning new techniques. <br/>
@@ -15,7 +15,7 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
     to help us communicate together not only with team members but with<br/>
     our TAs and our doctor as well to help us and for announcements too.<br/>
     We hope you like the website and find it useful. <br/>
-    Have nice time shopping ;) </b></i></p>
+    Have nice time shopping ;) </b></p>
 
     <div class="tp-wrapper">
       <div class="tp-box" (click)="toggleFlip()" [@flipState]="flip">
