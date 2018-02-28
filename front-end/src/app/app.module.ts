@@ -3,7 +3,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
+import { FormsModule } from '@angular/forms';
+=======
 import { HttpModule} from '@angular/http';
+>>>>>>> c2e71c5e4d7a8e2711a641d0676e24b8e94e7b76
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ThemeModule } from './@theme/theme.module';
 import { regService} from '../app/services/reg.services' ;
@@ -24,7 +28,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   bootstrap: [AppComponent],
   providers: [regService,{ provide: APP_BASE_HREF, useValue: '/' }]

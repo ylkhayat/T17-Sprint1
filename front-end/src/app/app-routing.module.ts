@@ -11,7 +11,7 @@ import {
 
 
 const routes: Routes = [
-  
+
   {
     path: 'auth',
     component: NbAuthComponent,
@@ -48,6 +48,7 @@ const routes: Routes = [
   {
     path:'items' ,
 	  loadChildren :'./dashboard/items/items.module#ItemsModule'},
+  
   {
     path: '', redirectTo: 'dashboard', pathMatch: 'full'
   },
