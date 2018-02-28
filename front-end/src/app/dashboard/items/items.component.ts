@@ -20,24 +20,18 @@ export class ItemsComponent {
   productName : string = '';
   productPrice : number = 0;
 
+
   constructor(private itemsService:ItemsService){
 
   }
 
   call(){
-     // `http://localhost:3000/api/product/createProduct${product._id}`
-     this.itemsService.createProduct(this.productName, this.productPrice).subscribe(){
-     res => {
-       console.log(res.msg);
-     }
-
-     this.itemsService.getProducts().subscribe(){
-     res => {
-       console.log(res.data);
-     }
-   }
-    // this.http.post(`http://localhost:3000/api/product/createProduct`,{name: "gtgt", price:5});
-    // console.log("hiiiiiiiiiiiiiiii");
-  }
-
+     this.itemsService.createProduct(this.productName, this.productPrice).subscribe();
 }
+}
+
+   //   this.itemsService.getProducts().subscribe(){
+   //   res => {
+   //     console.log(res.data);
+   //   }
+   // }

@@ -11,8 +11,8 @@ export class ItemsService {
     return this.httpClient.post(environment.apiUrl + 'product/createProduct', {'name':name, 'price':price});
   }
 
-  getProducts(){
-    return this.httpClient.get(environment.apiUrl + 'product/getProducts');
-  }
+  // getProducts(){
+  //   return this.httpClient.get(environment.apiUrl + 'product/getProducts');
+  // }
 
 }
