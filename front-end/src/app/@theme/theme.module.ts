@@ -1,9 +1,11 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { regService} from '../services/reg.services'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NbEmailPassAuthProvider, NbAuthModule } from '@nebular/auth';
+import {HttpModule} from '@angular/http';
+import { UserOb} from '../objects/UserObject';
 
 
 import {
@@ -74,8 +76,8 @@ const NB_THEME_PROVIDERS = [
 ];
 
 @NgModule({
-  imports: [...BASE_MODULES, ...NB_MODULES,NbAuthModule.forRoot({
-    providers: {
+  imports: [HttpModule,...BASE_MODULES, ...NB_MODULES,NbAuthModule.forRoot({
+    providers: { 
       email: {
         service: NbEmailPassAuthProvider,
         config: {
