@@ -69,6 +69,7 @@ module.exports.getProductsBelowPrice = function(req, res, next) {
 };
 
 module.exports.createProduct = function(req, res, next) {
+  console.log('hna');
   var valid =
     req.body.name &&
     Validations.isString(req.body.name) &&

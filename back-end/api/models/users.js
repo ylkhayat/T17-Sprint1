@@ -5,7 +5,7 @@ var UsersSchema = mongoose.Schema({
     fullname: {
         type: String,
         required: true,
-        unique: true,
+        trim: true,
         lowercase:true
       },
   email: {
@@ -17,7 +17,7 @@ var UsersSchema = mongoose.Schema({
   password: {
     type: String,
     required: true,
-    //unique:false
+    trim:true
     
   },
   //updatedAt: Date

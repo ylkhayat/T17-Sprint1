@@ -23,10 +23,10 @@ export class ItemsComponent {
 
   }
 
-  call(){
-     `http://localhost:3000/api/product/createProduct${product._id}`
-    this.http.post(`http://localhost:3000/api/product/createProduct`,{name: "gtgt", price:5});
-    console.log("hiiiiiiiiiiiiiiii");
-  }
+  //call(){
+    // `http://localhost:3000/api/product/createProduct${product._id}`
+    //this.http.post(`http://localhost:3000/api/product/createProduct`,{name: "gtgt", price:5});
+    //console.log("hiiiiiiiiiiiiiiii");
+  //}
 
 }

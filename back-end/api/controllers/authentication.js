@@ -8,6 +8,7 @@ var mongoose = require('mongoose'),
 module.exports=(router) =>{
     
     router.post('/register' , (req , res)=>{
+        
         if(!req.body.email){
             res.json({
                 success:false , message: 'nooo'
@@ -40,20 +41,32 @@ module.exports=(router) =>{
             fullname:req.body.fullname.toLowerCase(),
             password:req.body.password
         });
-        users.save(hoba.body);
+        //users.save((hoba.body));
+        
        users.save((err)=>{
-          //  if(err){
-              //  res.json({
-                //    success:false , message: 'not save ',err
-              //  });
-          //  }
-          //  else{
+            if(err){
+               
+              
+            }
+            else{
+                users.save((hoba.body));
                // res.json({
                    // success:false , message: 'saved '
                // });
-            //}
+            }
         })
     });
      
     return router;
 }
+/*module.exports=(router) =>{
+    
+    router.get('/login' , (req , res)=>{
+        res.json({
+             success:false , message: 'here '
+         });
+         
+    });
+     
+    return router;
+}*/

@@ -11,8 +11,8 @@ router = express.Router(),
   config = require('./api/config/Config'),
   app = express();
   const authentication = require('../back-end/api/controllers/authentication')(router);
-  
 
+  
 app.set('secret', config.SECRET);
 
 app.use(logger(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
@@ -54,14 +54,14 @@ app.use(function(err, req, res, next) {
 app.use('/authentication' , authentication);
 console.log('test');
 // 404 error handler
-app.use(function(req, res) {
+/*app.use(function(req, res) {
   res.status(404).json({
     err: null,
     msg: '404 Not Found',
     data: null
     
   });
-}); 
+}); */
 
 module.exports = app;
 
