@@ -11,12 +11,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
       title: 'Fashion Store (C1)',
       icon: 'fa fa-female',
       link: '/dashboard/store/fashionstore',
-      ,
+    },
       {
         title: 'Sports Store (C2)',
         icon: 'fa fa-soccer-ball-o',
         link: '/dashboard/store/sportstore',
-
       },
       {
         title: 'Food Store (C3)',
