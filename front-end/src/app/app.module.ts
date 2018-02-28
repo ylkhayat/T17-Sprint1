@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ThemeModule } from './@theme/theme.module';
 import { regService} from '../app/services/reg.services' ;
 import { UserOb} from '../app/objects/UserObject';
+//import { NbRegisterComponent} from '../../../front-end/node_modules/@nebular/auth/components/register/register.component';
+
 
 import { AppRoutingModule } from './app-routing.module';
 

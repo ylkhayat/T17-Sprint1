@@ -2,8 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { regService} from '/Users/ziad/T17-Sprint1/front-end/src/app/services/reg.services' ;
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
-
+import {UserOb} from '../../../objects/UserObject';
 import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
+import { LocalDataSource } from 'ng2-smart-table';
+import { NbRegisterComponent} from '../../../../../../front-end/node_modules/@nebular/auth/components/register/register.component'
 
 
 @Component({
@@ -15,6 +17,11 @@ export class HeaderComponent implements OnInit {
   @Input() position = 'normal';
   user: any;
   userMenu: any[];
+  obs :UserOb[];
+  users: LocalDataSource=new LocalDataSource();
+  NbRegisterComponent:NbRegisterComponent;
+  
+
 
 
 
@@ -22,8 +29,26 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit() {
-
+    
     this.userMenu = [{ title: 'Profile' },{ title: 'Settings' },{ title: 'Logout' }];
+//-------------------------------------register linking----------------------------------------------
+//---------------------------------------------------------------------------------------------------
+        var hoba =document.cookie;
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split('`');
+        var userob =  {
+                fullname:ca[1],
+                email:ca[2],
+                password:ca[3]
+         }
+         console.log(userob);
+         this.regService.addReg(userob).subscribe(Response=>{
+         this.users.add(userob);
+         console.log(this.users);
+
+         });
+    //-----------------------------------registerlinking---------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------
 
   }
 
@@ -32,6 +57,9 @@ export class HeaderComponent implements OnInit {
     private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
     private regService:regService
+    // UserOb:UserOb
+     
+    
   ) {}
 
   toggleSidebar(): boolean {
