@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+
 import { regService} from '/Users/ziad/T17-Sprint1/front-end/src/app/services/reg.services' ;
+
+//import { regService} from '../../../services/reg.services' ;
+
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import {UserOb} from '../../../objects/UserObject';
 import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
@@ -33,7 +37,7 @@ export class HeaderComponent implements OnInit {
     this.userMenu = [{ title: 'Profile' },{ title: 'Settings' },{ title: 'Logout' }];
 //-------------------------------------register linking----------------------------------------------
 //---------------------------------------------------------------------------------------------------
-        var hoba =document.cookie;
+       /* var hoba =document.cookie;
         var decodedCookie = decodeURIComponent(document.cookie);
         var ca = decodedCookie.split('`');
         var userob =  {
@@ -46,7 +50,7 @@ export class HeaderComponent implements OnInit {
          this.users.add(userob);
          console.log(this.users);
 
-         });
+         });*/
     //-----------------------------------registerlinking---------------------------------------------------
     //-----------------------------------------------------------------------------------------------------
 
@@ -57,9 +61,12 @@ export class HeaderComponent implements OnInit {
     private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
     private regService:regService
+
     // UserOb:UserOb
      
     
+
+
   ) {}
 
   toggleSidebar(): boolean {

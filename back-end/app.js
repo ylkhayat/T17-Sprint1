@@ -12,6 +12,9 @@ router = express.Router(),
   app = express();
   const authentication = require('../back-end/api/controllers/authentication')(router);
 
+
+  
+
   
 app.set('secret', config.SECRET);
 
@@ -61,7 +64,10 @@ console.log('test');
     data: null
     
   });
+<<<<<<< HEAD
 }); */
+
+
 
 module.exports = app;
 

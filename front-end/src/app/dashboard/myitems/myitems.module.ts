@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MyitemsComponent } from './myitems.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule, Ng2SmartTableModule,
+
   ],
-  declarations: []
+  declarations: [MyitemsComponent],
+  entryComponents: [],
+  providers: []
 })
 export class MyitemsModule { }

@@ -1,27 +1,30 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
+import { ItemsService } from './items.service'
 @Component({
   selector: 'app-dashboard-items',
   template: `
             <p style="color:black"> Insert name of product: </p>
-            <input type="text" id="Pname" ><br/>
+            <input type="text" [(ngModel)]="productName"><br/>
             <br/>
             <p style="color:black" > Insert price of product: </p>
-            <input type="text" id="Pprice"><br/>
+            <input type="number" [(ngModel)]="productPrice"><br/>
             <br/>
-            <button ng-click="call()"> Add Product </button>
+
+            <button (click)="call()"> Add Product </button>
             `
 })
 
 
 export class ItemsComponent {
-  productName : string ;
-  productPrice : number ;
+  productName : string = '';
+  productPrice : number = 0;
 
 
-  constructor(private http:Http){
+  constructor(private itemsService:ItemsService){
 
   }
+
 
   //call(){
     // `http://localhost:3000/api/product/createProduct${product._id}`
@@ -29,4 +32,15 @@ export class ItemsComponent {
     //console.log("hiiiiiiiiiiiiiiii");
   //}
 
+
+  call(){
+     this.itemsService.createProduct(this.productName, this.productPrice).subscribe();
+
 }
+}
+
+   //   this.itemsService.getProducts().subscribe(){
+   //   res => {
+   //     console.log(res.data);
+   //   }
+   // }

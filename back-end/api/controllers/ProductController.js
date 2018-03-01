@@ -146,6 +146,7 @@ module.exports.updateProduct = function(req, res, next) {
 };
 
 module.exports.deleteProduct = function(req, res, next) {
+  res.send('hereerere');
   if (!Validations.isObjectId(req.params.productId)) {
     return res.status(422).json({
       err: null,

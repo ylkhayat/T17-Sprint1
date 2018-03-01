@@ -20,6 +20,7 @@ var UsersSchema = mongoose.Schema({
     trim:true
     
   },
+
   //updatedAt: Date
 });
 
