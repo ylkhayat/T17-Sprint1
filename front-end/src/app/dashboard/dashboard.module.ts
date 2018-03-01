@@ -5,7 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 
 import { DashboardComponent } from './dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
-import { ToysComponent } from './store/toys/toys.component';
+import { FashionComponent } from './store/fashion/fashion.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { MyitemsComponent } from './myitems/myitems.component';
 // import { StoreComponent } from './store/store.component';
@@ -14,7 +14,7 @@ import { MyitemsComponent } from './myitems/myitems.component';
   imports: [ThemeModule,
             DashboardRoutingModule,
             FormsModule],
-  declarations: [DashboardComponent,LoginComponent,ToysComponent,SignupComponent,MyitemsComponent],
+  declarations: [DashboardComponent,LoginComponent,FashionComponent,SignupComponent,MyitemsComponent],
   entryComponents: [],
   providers: []
 })

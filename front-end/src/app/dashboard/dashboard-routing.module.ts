@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import { ToysComponent } from './store/toys/toys.component';
+import { FashionComponent } from './store/fashion/fashion.component';
 import { MyitemsComponent } from './myitems/myitems.component';
 
 const routes: Routes = [
@@ -39,8 +39,8 @@ const routes: Routes = [
       path: 'store',
       children: [
         {
-          path: 'toystore',
-          component: ToysComponent
+          path: 'fashionstore',
+          component: FashionComponent
         },
         // {
         //   path: 'sportstore',
