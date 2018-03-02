@@ -8,6 +8,7 @@ import { HttpModule} from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ThemeModule } from './@theme/theme.module';
 import { UserOb} from '../app/objects/UserObject';
+import { regService} from '../app/services/reg.services' ;
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -30,6 +31,6 @@ import { SignupComponent } from './dashboard/auth/signup/signup.component';
     FormsModule
   ],
   bootstrap: [AppComponent],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
+  providers: [regService,{ provide: APP_BASE_HREF, useValue: '/' }]
 })
 export class AppModule {}

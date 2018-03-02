@@ -10,13 +10,16 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class SignupService{
+    
     constructor(private http:Http){
         console.log('yalaa');
     }
    public addReg(UserOb){
+    
         var headers=new Headers();
         headers.append('content-type','application/json');
-        return this.http.post('http://localhost:3000/authe/register',JSON.stringify(UserOb),{headers:headers}).map(res=>
-    res.json());
+        return this.http.post('http://localhost:3000/authentication/register',UserOb).map(res=>
+
+        res.json());
     }
 }

@@ -14,7 +14,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       
       title: 'All Products',
       icon: 'fa fa-list',
-      link: '/dashboard/store/',
+      link: '/dashboard/store/all',
     },{
 
       title: 'Fashion Store (C1)',

@@ -5,6 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ToysComponent } from './store/toys/toys.component';
 import { MyitemsComponent } from './myitems/myitems.component';
+import { AllproductsComponent } from './store/allproducts/allproducts.component';
 
 const routes: Routes = [
 
@@ -41,6 +42,10 @@ const routes: Routes = [
         {
           path: 'toystore',
           component: ToysComponent
+        },
+        {
+          path: 'all',
+          component: AllproductsComponent
         },
         // {
         //   path: 'sportstore',

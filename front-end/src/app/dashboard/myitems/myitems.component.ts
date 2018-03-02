@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
-
+import { MyitemsService } from './myitems.service';
+import { Response } from '@angular/http';
 @Component({
   selector: 'app-myitems',
   templateUrl: './myitems.component.html',
@@ -9,42 +10,51 @@ import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
 export class MyitemsComponent implements OnInit {
 
   source : LocalDataSource;
-
+  d : any;
+  
   settings = {
     columns: {
-      id: {
-        title: 'ID',
-        filter:false
-      },
       name: {
-        title: 'Full Name',
+        title: 'Product Name',
+        filter:false,
+        
+      },
+      price: {
+        title: 'Price',
         filter:false
       },
-      username: {
-        title: 'User Name',
+      component: {
+        title: 'Store',
         filter:false
       },
-      email: {
-        title: 'Email',
+      seller: {
+        title: 'Seller Name',
+        filter:false
+      },
+      createdAt : {
+        title: 'Created At',
         filter:false
       }
     }
   };
 
-  data = [
-    {
-      id: 1,
-      name: "Leanne Graham",
-      username: "Bret",
-      email: "Sincere@april.biz"
-    }]
-  constructor() { }
+  constructor(private myitemsService:MyitemsService) { 
+    this.source = new LocalDataSource(this.d);
+
+  }
 
   ngOnInit() {
+   this.myitemsService.getProducts().subscribe(
+    (data) => {
+      this.d = data;
+   }
+
+  );
+
   }
 
 
-  onSearch(query: string = '') {
+  /*onSearch(query: string = '') {
     this.source.setFilter([
       {
         field: 'id',
@@ -64,6 +74,6 @@ export class MyitemsComponent implements OnInit {
       }
     ], false); 
     
-  }
+  }*/
 
 }
