@@ -6,7 +6,7 @@ import { LoginComponent } from '../auth/login/login.component';
   selector: 'app-myitems',
   template: `
   <ng2-smart-table [settings]="settings" [source]="data" (createConfirm)="onCreateCall($event)" (editConfirm)="onEditCall($event)" (deleteConfirm)="onDeleteCall($event)"></ng2-smart-table>
-  
+
   `,
   styleUrls: ['./myitems.component.scss'],
   providers: [MyitemsService]
@@ -18,8 +18,8 @@ export class MyitemsComponent implements OnInit {
 
   settings = {
 
-    
-  
+
+
 
     add: {
       confirmCreate: true
@@ -32,7 +32,7 @@ export class MyitemsComponent implements OnInit {
     },
 
     columns: {
-     
+
       name: {
         title: 'Name',
         filter:String
@@ -41,19 +41,23 @@ export class MyitemsComponent implements OnInit {
         title: 'Price',
         filter:Number
       },
-      
+
       component: {
         title: 'Component Name',
         filter:String
       },
-     
+
       createdAt: {
         title: 'CreatedAt',
-        filter:false
+        filter:false,
+        editable: false,
+        addable: false,
       },
       updatedAt: {
         title: 'UpdatedAt',
-        filter:false
+        filter:false,
+        editable: false,
+        addable: false,
       }
 
 
@@ -64,16 +68,16 @@ export class MyitemsComponent implements OnInit {
 
   constructor(private myitemsService:MyitemsService) { }
 
-  
+
   onCreateCall(event){
     event.confirm.resolve(event.newData);
-    this.myitemsService.createProduct(event.newData.name, event.newData.price,event.newData.component,event.newData.seller).subscribe();
+    this.myitemsService.createProduct(event.newData.name, event.newData.price,event.newData.component,window.sessionStorage.email).subscribe();
 }
 
 onEditCall(event){
     event.confirm.resolve(event.newData);
     console.log(event);
-    this.myitemsService.updateProduct(event.newData._id, event.newData.name, event.newData.price,event.newData.component,event.newData.seller).subscribe();
+    this.myitemsService.updateProduct(event.newData._id, event.newData.name, event.newData.price,event.newData.component,window.sessionStorage.email).subscribe();
 }
 
 onDeleteCall(event){

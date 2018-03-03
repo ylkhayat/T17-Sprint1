@@ -4,14 +4,14 @@ var mongoose = require('mongoose'),
   AllProducts = mongoose.model('AllProducts');
 
 module.exports.getProduct = function(req, res, next) {
-  if (!Validations.isObjectId(req.params.productId)) {
+  if (!Validations.isObjectId(req.params.allproductsId)) {
     return res.status(422).json({
       err: null,
-      msg: 'productId parameter must be a valid ObjectId.',
+      msg: 'allproductsId parameter must be a valid ObjectId.',
       data: null
     });
   }
-  AllProducts.findById(req.params.productId).exec(function(err, product) {
+  AllProducts.findById(req.params.allproductsId).exec(function(err, product) {
     if (err) {
       return next(err);
     }
@@ -60,6 +60,31 @@ module.exports.getProductsByComponent = function(req, res, next) {
         msg:
           'Products in ' +
           req.params.component +
+          ' retrieved successfully.',
+        data: products
+      });
+    });
+};
+
+module.exports.getProductsBySeller = function(req, res, next) {
+    if (!Validations.isString(req.params.seller)) {
+      return res.status(422).json({
+        err: null,
+        msg: 'seller parameter must be a valid string.',
+        data: null
+      });
+    }
+    AllProducts.find({
+      seller: req.params.seller
+    }).exec(function(err, products) {
+      if (err) {
+        return next(err);
+      }
+      res.status(200).json({
+        err: null,
+        msg:
+          'Products in ' +
+          req.params.seller +
           ' retrieved successfully.',
         data: products
       });
@@ -123,10 +148,10 @@ module.exports.createProduct = function(req, res, next) {
 };
 
 module.exports.updateProduct = function(req, res, next) {
-  if (!Validations.isObjectId(req.params.productId)) {
+  if (!Validations.isObjectId(req.params.allproductsId)) {
     return res.status(422).json({
       err: null,
-      msg: 'productId parameter must be a valid ObjectId.',
+      msg: 'allproductsId parameter must be a valid ObjectId.',
       data: null
     });
   }
@@ -147,7 +172,7 @@ module.exports.updateProduct = function(req, res, next) {
   req.body.updatedAt = moment().toDate();
 
   AllProducts.findByIdAndUpdate(
-    req.params.productId,
+    req.params.allproductsId,
     {
       $set: req.body
     },
@@ -170,14 +195,14 @@ module.exports.updateProduct = function(req, res, next) {
 };
 
 module.exports.deleteProduct = function(req, res, next) {
-  if (!Validations.isObjectId(req.params.productId)) {
+  if (!Validations.isObjectId(req.params.allproductsId)) {
     return res.status(422).json({
       err: null,
-      msg: 'productId parameter must be a valid ObjectId.',
+      msg: 'allproductsId parameter must be a valid ObjectId.',
       data: null
     });
   }
-  AllProducts.findByIdAndRemove(req.params.productId).exec(function(
+  AllProducts.findByIdAndRemove(req.params.allproductsId).exec(function(
     err,
     deletedProduct
   ) {

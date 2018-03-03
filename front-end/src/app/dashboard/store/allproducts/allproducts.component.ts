@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
+import { AllproductsService } from './allproducts.service';
 
 @Component({
   selector: 'app-allproducts',
   templateUrl: './allproducts.component.html',
-  styleUrls: ['./allproducts.component.scss']
+  styleUrls: ['./allproducts.component.scss'],
+  providers:[AllproductsService]
 })
 export class AllproductsComponent implements OnInit {
 
@@ -12,64 +14,54 @@ export class AllproductsComponent implements OnInit {
   source : LocalDataSource;
 
   settings = {
+    actions: false,
     columns: {
-      id: {
-        title: 'ID',
-        filter:false
-      },
+
       name: {
-        title: 'Full Name',
-        filter:false
+        title: 'Name',
+        filter:String
       },
-      username: {
-        title: 'User Name',
-        filter:false
+      price: {
+        title: 'Price',
+        filter:String
       },
-      email: {
-        title: 'Email',
-        filter:false
+      component: {
+        title: 'Component Number',
       },
-      button: {
-        title: 'Button',
-        type: 'custom',
-        renderComponent: ButtonViewComponent,
-        onComponentInitFunction(instance) {
-          instance.save.subscribe(row => {
-            console.log('hii');
-          });
-        },
+      seller: {
+        title: 'Seller Name',
+        filter:String,
+        editable: false,
+        addable: false,
+      },
+      createdAt: {
+        title: 'CreatedAt',
+        filter:false,
+        editable: false,
+      },
+      updatedAt: {
+        title: 'UpdatedAt',
+        filter:false
       }
+
+
     }
   };
 
   data = [
     ];
 
-  constructor() { }
+  constructor(private allproductsService:AllproductsService) { }
 
   ngOnInit() {
-  }
 
-  onSearch(query: string = '') {
-    this.source.setFilter([
-      {
-        field: 'id',
-        search: query
-      },
-      {
-        field: 'name',
-        search: query
-      },
-      {
-        field: 'username',
-        search: query
-      },
-      {
-        field: 'email',
-        search: query
+    this.allproductsService.getProducts().subscribe(
+      (res: any) => {
+       // console.log(res.data)
+       if(res.hasOwnProperty('data')){console.log(res);console.log(res.data);
+       this.data = res.data;}
       }
-    ], false);
-
+   );
   }
 
 

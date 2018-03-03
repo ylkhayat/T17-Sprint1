@@ -23,6 +23,7 @@ router.get('/allproducts/getProducts', allproductsCtrl.getProducts);
 router.get('/allproducts/getProduct/:allproductsId', allproductsCtrl.getProduct);
 router.get('/allproducts/getProductsBelowPrice/:price',allproductsCtrl.getProductsBelowPrice);
 router.get('/allproducts/getProductsByComponent/:component',allproductsCtrl.getProductsByComponent);
+router.get('/allproducts/getProductsBySeller/:seller',allproductsCtrl.getProductsBySeller);
 router.post('/allproducts/createProduct', allproductsCtrl.createProduct);
 router.patch('/allproducts/updateProduct/:allproductsId', allproductsCtrl.updateProduct);
 router.delete('/allproducts/deleteProduct/:allproductsId', allproductsCtrl.deleteProduct);

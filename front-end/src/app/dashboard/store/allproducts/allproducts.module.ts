@@ -9,6 +9,6 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     CommonModule, Ng2SmartTableModule
   ],
   declarations: [AllproductsComponent],
-  providers:[ AllproductsService]
+  providers: [AllproductsService]
 })
 export class AllproductsModule { }
