@@ -12,7 +12,7 @@ var express = require('express'),
 
 //-------------------------------Cart Routes-----------------------------------
 
-
+router.get('/cart/getProducts', cartCtrl.getProducts);
 router.get('/cart/getProduct/:cartId', cartCtrl.getProduct);
 router.get('/cart/getProductsBelowPrice/:price',cartCtrl.getProductsBelowPrice);
 router.get('/cart/getProductsByUser/:username',cartCtrl.getProductsByUser);

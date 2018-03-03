@@ -38,7 +38,7 @@ module.exports.getProductsByUser = function(req, res, next) {
       });
     }
     Cart.find({
-      seller: req.params.username
+      username: req.params.username
     }).exec(function(err, products) {
       if (err) {
         return next(err);
@@ -53,6 +53,19 @@ module.exports.getProductsByUser = function(req, res, next) {
       });
     });
 };
+
+module.exports.getProducts = function(req, res, next) {
+    Cart.find({}).exec(function(err, products) {
+      if (err) {
+        return next(err);
+      }
+      res.status(200).json({
+        err: null,
+        msg: 'Cart retrieved successfully.',
+        data: products
+      });
+    });
+  };
 
 module.exports.getProductsBelowPrice = function(req, res, next) {
   if (!Validations.isNumber(req.params.price)) {

@@ -64,5 +64,11 @@ export class AllproductsComponent implements OnInit {
    );
   }
 
+  onUserRowSelect(event):void
+{
+  console.log(event.data._id);
+  
+    this.allproductsService.createProduct(window.sessionStorage.email,event.data.name, event.data.price,event.data.component,event.data.seller).subscribe();
+}
 
 }
