@@ -29,8 +29,17 @@ export class AllproductsComponent implements OnInit {
         title: 'Email',
         filter:false
       },
-
+      button: {
+        title: 'Button',
+        type: 'custom',
+        renderComponent: ButtonViewComponent,
+        onComponentInitFunction(instance) {
+          instance.save.subscribe(row => {
+            console.log('hii');
+          });
+        },
       }
+    }
   };
 
   data = [
