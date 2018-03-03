@@ -18,6 +18,8 @@ router.get('/cart/getProductsBelowPrice/:price',cartCtrl.getProductsBelowPrice);
 router.get('/cart/getProductsByUser/:username',cartCtrl.getProductsByUser);
 router.post('/cart/createProduct', cartCtrl.createProduct);
 router.delete('/cart/deleteProduct/:cartId', cartCtrl.deleteProduct);
+router.delete('/cart/deleteProductsByUser/:username',cartCtrl.deleteProductsByUser);
+
 //-------------------------------Product Routes-----------------------------------
 router.get('/product/getProducts', productCtrl.getProducts);
 router.get('/product/getProduct/:productId', productCtrl.getProduct);

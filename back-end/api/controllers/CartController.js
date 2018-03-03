@@ -154,4 +154,29 @@ module.exports.deleteProduct = function(req, res, next) {
 };
 
 
+module.exports.deleteProductsByUser = function(req, res, next) {
+    if (!Validations.isString(req.params.username)) {
+      return res.status(422).json({
+        err: null,
+        msg: 'username parameter must be a valid string.',
+        data: null
+      });
+    }
+    Cart.remove({
+      username: req.params.username
+    }).exec(function(err, products) {
+      if (err) {
+        return next(err);
+      }
+      res.status(200).json({
+        err: null,
+        msg:
+          'Products in ' +
+          req.params.username +
+          ' retrieved successfully.',
+        data: products
+      });
+    });
+};
+
 

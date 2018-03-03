@@ -9,7 +9,7 @@ import { ToysService } from './toys.service';
 
  </h1>
 
- <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+ <ng2-smart-table [settings]="settings" [source]="data" (userRowSelect)="onUserRowSelect($event)"></ng2-smart-table>
 
 
  `,
@@ -67,6 +67,14 @@ export class ToysComponent implements OnInit {
        this.data = res.data;}
       }
    );
+  }
+
+
+  onUserRowSelect(event):void
+  {
+    alert('Added to Cart');
+    
+      this.toysService.createProduct(window.sessionStorage.email,event.data.name, event.data.price,event.data.component,event.data.seller).subscribe();
   }
 
 

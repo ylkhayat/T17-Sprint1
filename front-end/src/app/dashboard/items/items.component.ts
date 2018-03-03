@@ -5,6 +5,11 @@ import { ItemsService } from './items.service';
 @Component({
   selector: 'app-myitems',
   template: `
+  <div class="btn2"  >
+    <button _ngcontent-c0="" (click)="checkout()" class="btn btn-hero-success ">
+      <span _ngcontent-c0="">Checkout</span>
+    </button>
+  </div>
   <ng2-smart-table [settings]="settings" [source]="data"  (deleteConfirm)="onDeleteCall($event)"></ng2-smart-table>
 
   `,
@@ -101,6 +106,16 @@ ngOnInit() {
       this.data = res.data;}
      }
   );
+}
+
+
+
+checkout(){
+
+ alert('You checked out successfully');
+ this.myitemsService.deleteProductsByUser().subscribe();
+ window.location.reload();
+
 }
 
 

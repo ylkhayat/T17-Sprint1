@@ -9,7 +9,7 @@ import { ElectronicsService } from './electronics.service';
  
  </h1>
  
- <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+ <ng2-smart-table [settings]="settings" [source]="data"  (userRowSelect)="onUserRowSelect($event)"></ng2-smart-table>
  
  
  `,
@@ -69,6 +69,15 @@ export class ElectronicsComponent implements OnInit {
    );
   }
 
+
+  onUserRowSelect(event):void
+  {
+    alert('Added to Cart');
+    
+      this.electronicsService.createProduct(window.sessionStorage.email,event.data.name, event.data.price,event.data.component,event.data.seller).subscribe();
+  }
+  
+  
   onSearch(query: string = '') {
     this.source.setFilter([
       {

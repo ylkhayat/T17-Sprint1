@@ -19,4 +19,9 @@ export class ItemsService {
     return this.httpClient.delete(environment.apiUrl+ 'cart/deleteProduct/'+id);
   }
 
+
+  deleteProductsByUser(){
+    return this.httpClient.delete(environment.apiUrl+ 'cart/deleteProductsByUser/'+ window.sessionStorage.email);
+  }
+
 }

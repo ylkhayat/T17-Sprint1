@@ -7,10 +7,9 @@ export class SportsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createProduct(name:string, price:number, component:string, seller:string) {
-    return this.httpClient.post(environment.apiUrl + 'allproducts/createProduct', {'name':name, 'price':price , 'component':component,'seller':seller});
+  createProduct(username:string,name:string, price:number, component:string, seller:string) {
+    return this.httpClient.post(environment.apiUrl + 'cart/createProduct', {'username':username,'name':name, 'price':price , 'component':component,'seller':seller});
   }
-
   getProducts(){
     return this.httpClient.get(environment.apiUrl + 'allproducts/getProductsByComponent/c2');
   }

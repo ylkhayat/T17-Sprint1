@@ -7,14 +7,13 @@ export class ElectronicsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createProduct(name:string, price:number, component:string, seller:string) {
-    return this.httpClient.post(environment.apiUrl + 'allproducts/createProduct', {'name':name, 'price':price , 'component':component,'seller':seller});
-  }
-
   getProducts(){
     return this.httpClient.get(environment.apiUrl + 'allproducts/getProductsByComponent/c5');
   }
 
+  createProduct(username:string,name:string, price:number, component:string, seller:string) {
+    return this.httpClient.post(environment.apiUrl + 'cart/createProduct', {'username':username,'name':name, 'price':price , 'component':component,'seller':seller});
+  }
    updateProduct(id:object, name:string, price:number) {
     return this.httpClient.patch(environment.apiUrl + 'allproducts/updateProduct/'+id,{'name':name, 'price':price});
   }

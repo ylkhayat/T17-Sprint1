@@ -34,7 +34,7 @@
 	"_id": {
 		"$oid": "5a996d092d59532574d423dc"
 	},
-	"name": "h\u0026m",
+	"name": "h&m",
 	"price": 200,
 	"component": "c1",
 	"seller": "dinahisham",
@@ -134,7 +134,7 @@
 	"createdAt": {
 		"$date": "2018-02-28T16:41:10.164Z"
 	},
-	"component": "C1",
+	"component": "c1",
 	"__v": 0,
 	"updatedAt": {
 		"$date": "2018-02-28T16:42:14.043Z"
@@ -165,7 +165,7 @@
 	"createdAt": {
 		"$date": "2018-02-28T16:42:58.540Z"
 	},
-	"component": "C1",
+	"component": "c1",
 	"__v": 0
 },
 {
@@ -178,7 +178,7 @@
 	"createdAt": {
 		"$date": "2018-02-28T16:40:48.239Z"
 	},
-	"component": "C1",
+	"component": "c1",
 	"__v": 0,
 	"updatedAt": {
 		"$date": "2018-02-28T16:42:04.119Z"
@@ -239,7 +239,7 @@
 	"createdAt": {
 		"$date": "2018-02-28T16:35:48.766Z"
 	},
-	"component": "C1",
+	"component": "c1",
 	"__v": 0,
 	"updatedAt": {
 		"$date": "2018-02-28T16:41:39.400Z"
@@ -1361,7 +1361,7 @@
 	"updatedAt": {
 		"$date": "2018-03-02T19:31:23.811Z"
 	},
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1377,7 +1377,7 @@
 	"updatedAt": {
 		"$date": "2018-03-02T19:31:35.528Z"
 	},
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1393,7 +1393,7 @@
 	"updatedAt": {
 		"$date": "2018-03-02T19:31:44.552Z"
 	},
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1402,7 +1402,7 @@
 	"price": 80,
 	"seller": "Monsef",
 	"createdAt": "2018-03-02T18:28:32.412+0000",
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1418,7 +1418,7 @@
 	"updatedAt": {
 		"$date": "2018-03-02T19:31:00.488Z"
 	},
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1443,7 +1443,7 @@
 	"price": 50,
 	"seller": "Monsef",
 	"createdAt": "2018-03-02T18:27:29.742+0000",
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1452,7 +1452,7 @@
 	"price": 90,
 	"seller": "Monsef",
 	"createdAt": "2018-03-02T18:30:04.368+0000",
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1461,7 +1461,7 @@
 	"price": 100,
 	"seller": "Monsef",
 	"createdAt": "2018-03-02T18:27:58.529+0000",
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1474,7 +1474,7 @@
 	"createdAt": {
 		"$date": "2018-03-02T15:17:47.974Z"
 	},
-	"component": "C4",
+	"component": "c4",
 	"__v": 0,
 	"updatedAt": {
 		"$date": "2018-03-02T15:18:56.891Z"
@@ -1486,7 +1486,7 @@
 	"price": 450,
 	"seller": "Monsef",
 	"createdAt": "2018-03-02T18:28:49.785+0000",
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1499,7 +1499,7 @@
 	"createdAt": {
 		"$date": "2018-03-02T15:17:07.378Z"
 	},
-	"component": "C4",
+	"component": "c4",
 	"__v": 0,
 	"updatedAt": {
 		"$date": "2018-03-02T15:19:15.298Z"
@@ -1515,7 +1515,7 @@
 	"createdAt": {
 		"$date": "2018-03-02T15:17:24.844Z"
 	},
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1524,7 +1524,7 @@
 	"price": 70,
 	"seller": "Monsef",
 	"createdAt": "2018-03-02T18:29:28.443+0000",
-	"component": "C4",
+	"component": "c4",
 	"__v": 0
 },
 {
@@ -1537,7 +1537,7 @@
 	"createdAt": {
 		"$date": "2018-03-02T15:17:35.372Z"
 	},
-	"component": "C4",
+	"component": "c4",
 	"__v": 0,
 	"updatedAt": {
 		"$date": "2018-03-02T20:14:42.204Z"
