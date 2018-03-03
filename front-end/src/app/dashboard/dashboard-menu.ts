@@ -11,7 +11,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
      children: [
        {
          title: 'All Products',
-         icon: 'fa fa-shopping-basket',
+         icon: 'fa fa-list',
          link: '/dashboard/store/allproducts',
        },
        {
@@ -48,7 +48,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
    },
   {
     title: 'My Items',
-    icon: 'fa fa-shopping-basket	',
+    icon: 'fa fa-shopping-bag	',
     link: '/dashboard/myitems'
 
   },

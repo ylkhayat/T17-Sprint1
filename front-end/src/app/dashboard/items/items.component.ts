@@ -5,7 +5,9 @@ import { ItemsService } from './items.service';
 @Component({
   selector: 'app-myitems',
   template: `
+  
   <div class="btn2"  >
+  <h2>Your total is: {{total}}</h2>
     <button _ngcontent-c0="" (click)="checkout()" class="btn btn-hero-success ">
       <span _ngcontent-c0="">Checkout</span>
     </button>
@@ -16,7 +18,7 @@ import { ItemsService } from './items.service';
   providers: [ItemsService]
 })
 export class ItemsComponent implements OnInit {
-
+  total = 0;
   source : LocalDataSource;
 
 
@@ -104,6 +106,12 @@ ngOnInit() {
       // console.log(res.data)
       if(res.hasOwnProperty('data')){console.log(res);console.log(res.data);
       this.data = res.data;}
+      var total = 0;
+       for (let index = 0; index < res.data.length; index++) {
+         total += res.data[index].price;
+         
+       }
+       this.total = total;
      }
   );
 }

@@ -8,7 +8,8 @@ import { ElectronicsService } from './electronics.service';
   Electronics Products 
  
  </h1>
- 
+ <h3>To add products to your Cart, just click on the product! ;)</h3>
+
  <ng2-smart-table [settings]="settings" [source]="data"  (userRowSelect)="onUserRowSelect($event)"></ng2-smart-table>
  
  

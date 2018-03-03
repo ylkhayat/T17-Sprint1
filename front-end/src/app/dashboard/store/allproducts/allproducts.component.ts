@@ -60,6 +60,7 @@ export class AllproductsComponent implements OnInit {
        // console.log(res.data)
        if(res.hasOwnProperty('data')){console.log(res);console.log(res.data);
        this.data = res.data;}
+       
       }
    );
   }
