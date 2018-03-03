@@ -28,8 +28,9 @@ export class AllproductsComponent implements OnInit {
       email: {
         title: 'Email',
         filter:false
+      },
+
       }
-    }
   };
 
   data = [
@@ -58,8 +59,8 @@ export class AllproductsComponent implements OnInit {
         field: 'email',
         search: query
       }
-    ], false); 
-    
+    ], false);
+
   }
 
 
