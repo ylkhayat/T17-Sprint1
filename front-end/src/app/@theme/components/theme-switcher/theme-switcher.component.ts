@@ -37,7 +37,7 @@ export class ThemeSwitcherComponent implements OnInit {
   }
 
   private themeToBool(theme: NbJSThemeOptions) {
-    return theme.name === 'cosmic';
+    return theme.name === 'default';
   }
 
   private boolToTheme(theme: boolean) {
