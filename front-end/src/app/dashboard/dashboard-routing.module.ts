@@ -10,6 +10,7 @@ import { FoodComponent } from './store/food/food.component';
 import { FashionComponent } from './store/fashion/fashion.component';
 import { SportsComponent } from './store/sports/sports.component';
 import { AllproductsComponent } from './store/allproducts/allproducts.component';
+import { ItemsComponent } from './items/items.component';
 
 const routes: Routes = [
 
@@ -27,7 +28,7 @@ const routes: Routes = [
     },
     {
       path:'items',
-      loadChildren : './items/items.module#ItemsModule'
+      component:ItemsComponent
     },
     { path: 'authe',
     children: [

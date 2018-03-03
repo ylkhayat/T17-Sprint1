@@ -2,12 +2,22 @@ var express = require('express'),
   router = express.Router(),
   productCtrl = require('../controllers/ProductController');
   allproductsCtrl = require('../controllers/AllProductsController');
-
+  cartCtrl = require('../controllers/CartController');
   const authentication = require('../controllers/authentication')(router);
   app = express();
 	memberCtrl = require('../controllers/MemberController');
 
 
+
+
+//-------------------------------Cart Routes-----------------------------------
+
+
+router.get('/cart/getProduct/:cartId', cartCtrl.getProduct);
+router.get('/cart/getProductsBelowPrice/:price',cartCtrl.getProductsBelowPrice);
+router.get('/cart/getProductsByUser/:username',cartCtrl.getProductsByUser);
+router.post('/cart/createProduct', cartCtrl.createProduct);
+router.delete('/cart/deleteProduct/:cartId', cartCtrl.deleteProduct);
 //-------------------------------Product Routes-----------------------------------
 router.get('/product/getProducts', productCtrl.getProducts);
 router.get('/product/getProduct/:productId', productCtrl.getProduct);

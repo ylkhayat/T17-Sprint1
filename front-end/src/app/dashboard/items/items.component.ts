@@ -1,37 +1,106 @@
-import { Component } from '@angular/core';
-import { Http } from '@angular/http';
-import { ItemsService } from './items.service'
+import { Component, OnInit } from '@angular/core';
+import { Ng2SmartTableModule,LocalDataSource } from 'ng2-smart-table';
+import { LoginComponent } from '../auth/login/login.component';
+import { ItemsService } from './items.service';
 @Component({
-  selector: 'app-dashboard-items',
+  selector: 'app-myitems',
   template: `
-            <p style="color:black"> Insert name of product: </p>
-            <input type="text" [(ngModel)]="productName"><br/>
-            <br/>
-            <p style="color:black" > Insert price of product: </p>
-            <input type="number" [(ngModel)]="productPrice"><br/>
-            <br/>
+  <ng2-smart-table [settings]="settings" [source]="data" (createConfirm)="onCreateCall($event)" (editConfirm)="onEditCall($event)" (deleteConfirm)="onDeleteCall($event)"></ng2-smart-table>
 
-            <button (click)="call()"> Add Product </button>
-            `
+  `,
+  providers: [ItemsService]
 })
+export class ItemsComponent implements OnInit {
+
+  source : LocalDataSource;
 
 
-export class ItemsComponent {
-  productName : string = '';
-  productPrice : number = 0;
+  settings = {
 
 
-  constructor(private itemsService:ItemsService){
 
-  }
 
-  call(){
-     this.itemsService.createProduct(this.productName, this.productPrice).subscribe();
+    
+    delete: {
+      confirmDelete: true
+    },
+
+    columns: {
+
+      name: {
+        title: 'Name',
+        filter:String,
+        editable: false,
+        addable: false,
+      },
+      price: {
+        title: 'Price',
+        filter:Number,
+        editable: false,
+        addable: false,
+      },
+
+      component: {
+        title: 'Component Name',
+        filter:String,
+        editable: false,
+        addable: false,
+      },
+      seller: {
+        title: 'Seller Name',
+        filter:String,
+        editable: false,
+        addable: false,
+      },
+
+      createdAt: {
+        title: 'CreatedAt',
+        filter:false,
+        editable: false,
+        addable: false,
+      },
+      updatedAt: {
+        title: 'UpdatedAt',
+        filter:false,
+        editable: false,
+        addable: false,
+      }
+
+
+    }
+  };
+
+  data = [];
+
+  constructor(private myitemsService:ItemsService) { }
+
+
+
+
+
+onDeleteCall(event){
+ event.confirm.resolve(event.data._id);
+ console.log(event.data._id);
+ this.myitemsService.deleteProduct(event.data._id).subscribe();
 }
+// onEditCall(event){
+//     event.confirm.resolve(event.newData);
+//     this.myitemsService.updateProduct(event.newData.name, event.newData.price).subscribe();
+// }
+
+
+
+ngOnInit() {
+  this.myitemsService.getProducts().subscribe(
+     (res: any) => {
+      // console.log(res.data)
+      if(res.hasOwnProperty('data')){console.log(res);console.log(res.data);
+      this.data = res.data;}
+     }
+  );
 }
 
-   //   this.itemsService.getProducts().subscribe(){
-   //   res => {
-   //     console.log(res.data);
-   //   }
-   // }
+
+
+
+}

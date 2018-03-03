@@ -13,13 +13,14 @@ import { ToysComponent } from './store/toys/toys.component';
 import { FoodComponent } from './store/food/food.component';
 import { FashionComponent } from './store/fashion/fashion.component';
 import { SportsComponent } from './store/sports/sports.component';
+import { ItemsComponent } from './items/items.component';
 // import { StoreComponent } from './store/store.component';
 
 @NgModule({
   imports: [ThemeModule,
             DashboardRoutingModule,
             FormsModule],
-  declarations: [DashboardComponent,LoginComponent,SignupComponent,MyitemsComponent,ElectronicsComponent, ToysComponent, FashionComponent, FoodComponent, SportsComponent,AllproductsComponent],
+  declarations: [DashboardComponent,LoginComponent,SignupComponent,MyitemsComponent,ElectronicsComponent, ToysComponent, FashionComponent, FoodComponent, SportsComponent,AllproductsComponent,ItemsComponent],
   entryComponents: [],
   providers: []
 })

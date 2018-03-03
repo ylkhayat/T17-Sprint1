@@ -60,5 +60,5 @@ mongoose.connect(dburl, function(err) {
 require('../models/AllProducts');
 require('../models/Product');
 require('../models/users');
-
+require('../models/Cart');
 require('../models/Member');
