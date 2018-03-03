@@ -44,7 +44,7 @@ const routes: Routes = [
       path: 'store',
       children: [
         {
-        path: 'all',
+        path: 'allproducts',
         component: AllproductsComponent
         },
         {
