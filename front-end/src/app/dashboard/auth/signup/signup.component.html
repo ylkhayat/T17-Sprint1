@@ -1,0 +1,12 @@
+<div class='login'>
+  <h2>Register</h2>
+  <input name='email'  [(ngModel)]="email" placeholder='E-Mail Address' type='text'>
+  <input id='pw'   [(ngModel)]="password" name='password' placeholder='Password' type='password'>
+  <input type='text' [(ngModel)]="username" name='username' placeholder='Email' >
+  <div class='agree'>
+    <input id='agree' name='agree' type='checkbox'>
+    <label for='agree'></label>Accept rules and conditions
+  </div>
+  <input type='animated' (click)="add()" type='submit' value='Register'>
+  <span><a class='forgot'>Have already an account </a> <a class='forgot' href='#/dashboard/authe/login'>Login</a></span>
+</div>
