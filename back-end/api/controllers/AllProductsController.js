@@ -41,6 +41,31 @@ module.exports.getProducts = function(req, res, next) {
   });
 };
 
+module.exports.getProductsByComponent = function(req, res, next) {
+    if (!Validations.isString(req.params.component)) {
+      return res.status(422).json({
+        err: null,
+        msg: 'component parameter must be a valid string.',
+        data: null
+      });
+    }
+    AllProducts.find({
+      component: req.params.component
+    }).exec(function(err, products) {
+      if (err) {
+        return next(err);
+      }
+      res.status(200).json({
+        err: null,
+        msg:
+          'Products in ' +
+          req.params.component +
+          ' retrieved successfully.',
+        data: products
+      });
+    });
+};
+
 module.exports.getProductsBelowPrice = function(req, res, next) {
   if (!Validations.isNumber(req.params.price)) {
     return res.status(422).json({

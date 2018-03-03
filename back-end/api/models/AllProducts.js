@@ -16,6 +16,18 @@ var allSchema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  component:{
+    type: String,
+    quired: true,
+    trim: true,
+  lowercase: true
+},
+seller: {
+  type: String,
+  required: true,
+  trim: true,
+  lowercase: true
+},
   updatedAt: Date
 });
 

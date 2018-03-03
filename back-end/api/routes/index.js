@@ -20,14 +20,12 @@ router.patch('/product/updateProduct/:productId', productCtrl.updateProduct);
 router.delete('/product/deleteProduct/:productId', productCtrl.deleteProduct);
 //-------------------------------All products Routes-----------------------------------
 router.get('/allproducts/getProducts', allproductsCtrl.getProducts);
-router.get('/allproducts/getProduct/:productId', allproductsCtrl.getProduct);
-router.get(
-  '/allproducts/getProductsBelowPrice/:price',
-  allproductsCtrl.getProductsBelowPrice
-);
+router.get('/allproducts/getProduct/:allproductsId', allproductsCtrl.getProduct);
+router.get('/allproducts/getProductsBelowPrice/:price',allproductsCtrl.getProductsBelowPrice);
+router.get('/allproducts/getProductsByComponent/:component',allproductsCtrl.getProductsByComponent);
 router.post('/allproducts/createProduct', allproductsCtrl.createProduct);
-router.patch('/allproducts/updateProduct/:productId', allproductsCtrl.updateProduct);
-router.delete('/allproducts/deleteProduct/:productId', allproductsCtrl.deleteProduct);
+router.patch('/allproducts/updateProduct/:allproductsId', allproductsCtrl.updateProduct);
+router.delete('/allproducts/deleteProduct/:allproductsId', allproductsCtrl.deleteProduct);
 
 
 app.use('/authentication' , authentication);
