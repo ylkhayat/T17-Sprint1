@@ -5,7 +5,7 @@ import { ItemsService } from './items.service';
 @Component({
   selector: 'app-myitems',
   template: `
-  <ng2-smart-table [settings]="settings" [source]="data" (createConfirm)="onCreateCall($event)" (editConfirm)="onEditCall($event)" (deleteConfirm)="onDeleteCall($event)"></ng2-smart-table>
+  <ng2-smart-table [settings]="settings" [source]="data"  (deleteConfirm)="onDeleteCall($event)"></ng2-smart-table>
 
   `,
   providers: [ItemsService]
@@ -19,7 +19,10 @@ export class ItemsComponent implements OnInit {
 
 
 
-
+actions:{
+  add:false,
+  edit:false
+},
     
     delete: {
       confirmDelete: true
